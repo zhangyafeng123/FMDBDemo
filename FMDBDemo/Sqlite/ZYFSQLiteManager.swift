@@ -67,7 +67,8 @@ extension ZYFSQLiteManager {
                 
                 //执行 SQL
                 if db.executeUpdate(sql, withArgumentsIn: [statusId,userId,jsonData]) == false {
-                    // FIXME : 需要回滚
+                    // 需要回滚
+                    rollback.pointee = true
                     break
                 }
                 
