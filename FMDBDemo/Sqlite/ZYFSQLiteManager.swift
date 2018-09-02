@@ -41,6 +41,22 @@ class ZYFSQLiteManager {
 
 // MARK: - 微博数据操作
 extension ZYFSQLiteManager {
+    
+    //since_id: Int64 = 0, max_id: Int64 = 0
+    
+    /// 从数据库加载微博数据数组
+    ///
+    /// - Parameters:
+    ///   - userId: 当前登录的用户账号
+    ///   - since_id: 返回ID比since_id大的微博
+    ///   - max_id: 返回ID小于max_id的微博
+    /// - Returns: 微博的字典的数组，将数据库中 status 字段对应的二进制数据反序列化，生成字典
+    func loadStatus(userId: String,since_id: Int64 = 0, max_id: Int64 = 0) -> [[String : Any]] {
+        
+        return []
+    }
+    
+    
     //新增或者修改微博数据，微博数据在刷新的时候，可能会出现重叠
     /**
      思考:从网络加载结束后，返回的是微博的‘字典数组’，每一个字典对应一个完整的微博记录
