@@ -12,9 +12,13 @@
 		BA485AF8213BF9A800F05576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA485AF6213BF9A800F05576 /* Main.storyboard */; };
 		BA485AFA213BF9AA00F05576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA485AF9213BF9AA00F05576 /* Assets.xcassets */; };
 		BA485AFD213BF9AA00F05576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA485AFB213BF9AA00F05576 /* LaunchScreen.storyboard */; };
+		BA485B06213BF9FB00F05576 /* ZYFSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */; };
+		F52E8725055C2F8B72DB0B0F /* Pods_FMDBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE28F4ED39D7A2AF6944834B /* Pods_FMDBDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8DFDED5DCCD2F0105190A674 /* Pods-FMDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9CEF2698D12653620BF17471 /* Pods-FMDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BA485AEF213BF9A800F05576 /* FMDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA485AF2213BF9A800F05576 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA485AF4213BF9A800F05576 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		BA485AF9213BF9AA00F05576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA485AFC213BF9AA00F05576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA485AFE213BF9AB00F05576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYFSQLiteManager.swift; sourceTree = "<group>"; };
+		DE28F4ED39D7A2AF6944834B /* Pods_FMDBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMDBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52E8725055C2F8B72DB0B0F /* Pods_FMDBDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813993E9585CFFEC6E1B1103 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE28F4ED39D7A2AF6944834B /* Pods_FMDBDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83DD37696A7C434B76E872E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CEF2698D12653620BF17471 /* Pods-FMDBDemo.debug.xcconfig */,
+				8DFDED5DCCD2F0105190A674 /* Pods-FMDBDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BA485AE6213BF9A800F05576 = {
 			isa = PBXGroup;
 			children = (
 				BA485AF1213BF9A800F05576 /* FMDBDemo */,
 				BA485AF0213BF9A800F05576 /* Products */,
+				83DD37696A7C434B76E872E8 /* Pods */,
+				813993E9585CFFEC6E1B1103 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +80,7 @@
 		BA485AF1213BF9A800F05576 /* FMDBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BA485B04213BF9FB00F05576 /* Sqlite */,
 				BA485AF2213BF9A800F05576 /* AppDelegate.swift */,
 				BA485AF4213BF9A800F05576 /* ViewController.swift */,
 				BA485AF6213BF9A800F05576 /* Main.storyboard */,
@@ -64,6 +91,14 @@
 			path = FMDBDemo;
 			sourceTree = "<group>";
 		};
+		BA485B04213BF9FB00F05576 /* Sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */,
+			);
+			path = Sqlite;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA485B01213BF9AB00F05576 /* Build configuration list for PBXNativeTarget "FMDBDemo" */;
 			buildPhases = (
+				47580DA63CA0D035F5B64A84 /* [CP] Check Pods Manifest.lock */,
 				BA485AEB213BF9A800F05576 /* Sources */,
 				BA485AEC213BF9A800F05576 /* Frameworks */,
 				BA485AED213BF9A800F05576 /* Resources */,
+				0AB865184FCDBEE0A327E8E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +167,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AB865184FCDBEE0A327E8E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47580DA63CA0D035F5B64A84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FMDBDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA485AEB213BF9A800F05576 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA485B06213BF9FB00F05576 /* ZYFSQLiteManager.swift in Sources */,
 				BA485AF5213BF9A800F05576 /* ViewController.swift in Sources */,
 				BA485AF3213BF9A800F05576 /* AppDelegate.swift in Sources */,
 			);
@@ -278,6 +355,7 @@
 		};
 		BA485B02213BF9AB00F05576 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CEF2698D12653620BF17471 /* Pods-FMDBDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +373,7 @@
 		};
 		BA485B03213BF9AB00F05576 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DFDED5DCCD2F0105190A674 /* Pods-FMDBDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
