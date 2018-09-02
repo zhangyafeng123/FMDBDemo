@@ -79,7 +79,49 @@ extension ZYFSQLiteManager {
     
 }
 // MARK: - 创建数据表以及其他私有方法
-private extension ZYFSQLiteManager {
+extension ZYFSQLiteManager {
+    
+    /// 执行一个 sql,返回字典的数组
+    ///
+    /// - Parameter sql: sql
+    /// - Returns: 字典的数组
+    func execRecordSet(sql: String) -> [[String : Any]] {
+        
+        //结果数组
+        var result = [[String : Any]]()
+        
+        
+        // 执行 sql - 查询数据， 不会修改数据，所以不需要开启事务
+        // 事务的目的，是为了保证数据的有效性，一旦失败，回滚到初始状态
+        queue.inDatabase { (db) in
+            guard let rs = db.executeQuery(sql, withArgumentsIn: [])  else {
+                return
+            }
+            //逐行 - 遍历结果集合
+            while rs.next() {
+                //1.列数
+                let colCount = rs.columnCount
+                //2.遍历所有列
+                for col in 0..<colCount {
+                    
+                    guard
+                    //3 列名 - key
+                    let name = rs.columnName(for: col),
+                    //4 值 - value
+                    let value = rs.object(forColumnIndex: col) else {
+                        continue
+                    }
+                    
+                    //5.追加结果
+                    result.append([name : value])
+                }
+                
+            }
+        }
+        
+        return result
+    }
+    
     
     /// 创建数据表
     func createTable()  {
