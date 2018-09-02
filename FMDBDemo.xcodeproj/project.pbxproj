@@ -13,6 +13,7 @@
 		BA485AFA213BF9AA00F05576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA485AF9213BF9AA00F05576 /* Assets.xcassets */; };
 		BA485AFD213BF9AA00F05576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA485AFB213BF9AA00F05576 /* LaunchScreen.storyboard */; };
 		BA485B06213BF9FB00F05576 /* ZYFSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */; };
+		BA485B08213C02F200F05576 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = BA485B07213C02F200F05576 /* status.sql */; };
 		F52E8725055C2F8B72DB0B0F /* Pods_FMDBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE28F4ED39D7A2AF6944834B /* Pods_FMDBDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		BA485AFC213BF9AA00F05576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA485AFE213BF9AB00F05576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYFSQLiteManager.swift; sourceTree = "<group>"; };
+		BA485B07213C02F200F05576 /* status.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
 		DE28F4ED39D7A2AF6944834B /* Pods_FMDBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FMDBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				BA485B05213BF9FB00F05576 /* ZYFSQLiteManager.swift */,
+				BA485B07213C02F200F05576 /* status.sql */,
 			);
 			path = Sqlite;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA485B08213C02F200F05576 /* status.sql in Resources */,
 				BA485AFD213BF9AA00F05576 /* LaunchScreen.storyboard in Resources */,
 				BA485AFA213BF9AA00F05576 /* Assets.xcassets in Resources */,
 				BA485AF8213BF9A800F05576 /* Main.storyboard in Resources */,
