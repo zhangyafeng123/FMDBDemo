@@ -56,7 +56,23 @@ extension ZYFSQLiteManager {
          **/
         let sql = "INSERT OR REPLACE INTO T_Status (statusId, userId, status) VALUES (?, ?, ?);"
         //2.执行sql
-        
+        queue.inTransaction { (db, rollback) in
+            //遍历数组，逐条插入微博数据
+            for dict in array {
+                guard let statusId = dict["idstr"] as? String,
+                    let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [])
+                    else {
+                        continue
+                }
+                
+                //执行 SQL
+                if db.executeUpdate(sql, withArgumentsIn: [statusId,userId,jsonData]) == false {
+                    // FIXME : 需要回滚
+                    break
+                }
+                
+            }
+        }
     }
     
     

@@ -14,7 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let sqlManager = ZYFSQLiteManager.shared
         
+        let array: [[String : Any]] = [["idstr" : "101", "text" : "微博-101"],
+                     ["idstr" : "101", "text" : "微博-102"]]
         
+        sqlManager.updateStatus(userId: "1", array: array)
     }
 
     override func didReceiveMemoryWarning() {
