@@ -63,8 +63,26 @@ extension ZYFSQLiteManager {
         }
         sql += "order by statusId desc limit 20;"
         //拼接 sql 结束后一定要测试
-        print(sql)
-        return []
+//        print(sql)
+        
+        //2.执行 sql
+        let array = execRecordSet(sql: sql)
+        //3.遍历数组,将数组中的 status 数据进行反序列化
+        var result = [[String : Any]]()
+        for dict in array {
+            //反序列化
+            guard
+                let jsonData = dict["status"] as? Data,
+            let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String : Any]
+                else {
+                    continue
+            }
+            //追加到数组
+            result.append(json ?? [:])
+            
+        }
+        
+        return result
     }
     
     
