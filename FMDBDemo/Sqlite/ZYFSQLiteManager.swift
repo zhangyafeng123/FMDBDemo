@@ -52,7 +52,18 @@ extension ZYFSQLiteManager {
     ///   - max_id: 返回ID小于max_id的微博
     /// - Returns: 微博的字典的数组，将数据库中 status 字段对应的二进制数据反序列化，生成字典
     func loadStatus(userId: String,since_id: Int64 = 0, max_id: Int64 = 0) -> [[String : Any]] {
-        
+        //1.准备sql
+        var sql = "select statusId, userId, status from T_Status \n"
+        sql += "where userId = \(userId) \n"
+        //上拉、下拉，都是针对同一个 id 进行判断
+        if since_id > 0 {
+            sql += "and statusId > \(since_id) \n"
+        } else if max_id > 0 {
+            sql += "and statusId < \(max_id) \n"
+        }
+        sql += "order by statusId desc limit 20;"
+        //拼接 sql 结束后一定要测试
+        print(sql)
         return []
     }
     

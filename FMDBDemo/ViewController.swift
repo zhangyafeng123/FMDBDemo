@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         
         let ls = ZYFSQLiteManager.shared.execRecordSet(sql: "select statusId, userId, status from T_Status;")
         print(ls)
+        // --- 测试加载微博数据 ---
+        // 1> 进入系统第一次刷新
+        //ZYFSQLiteManager.shared.loadStatus(userId: "1", since_id: 0, max_id: 0)
+        // 2> 测试下拉刷新
+        //ZYFSQLiteManager.shared.loadStatus(userId: "1", since_id: 106, max_id: 0)
+        // 2> 测试上拉刷新
+        ZYFSQLiteManager.shared.loadStatus(userId: "1", since_id: 0, max_id: 105)
+        
     }
 
    
